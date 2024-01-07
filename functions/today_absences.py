@@ -1,10 +1,10 @@
 import datetime
 import pandas as pd
-
+from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 def get_df_from_xlsx():
     """Читаем файл, формируем DataFrame"""
-    df = pd.read_excel('functions/vacation schedule.xlsx', sheet_name=0, header=0)
+    df = pd.read_excel('functions/staff absence.xlsx', sheet_name=0, header=0)
     return df
 
 
@@ -24,8 +24,11 @@ def today_stuff_absences():
     absences = ''
     for i in range(len(df['name'])):
         if df['begin_new'][i] <= pd.to_datetime('today').date() <= df['end_new'][i]:
-            absences += f"{df['name'][i]} в отпуске с {date_format_dmy(df['begin'][i])} по {date_format_dmy(df['end'][i])}\n"
+            absences += f"{df['name'][i]} <b>{df['type of absence'][i]}</b> с {date_format_dmy(df['begin'][i])} по {date_format_dmy(df['end'][i])}\n"
         else:
             continue
 
     return absences
+
+
+

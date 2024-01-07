@@ -15,6 +15,14 @@ async def set_commands(bot: Bot):
         BotCommand(
             command='today',
             description='Список отсутствующих сегодня'
+        ),
+        BotCommand(
+            command='abs_param',
+            description='Список отсутствующих по параметрам'
+        ),
+        BotCommand(
+            command='subsribe',
+            description='Подписаться на еженедельное получение списка отсутсвующих'
         )
     ]
 
