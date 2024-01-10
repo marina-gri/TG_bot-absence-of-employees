@@ -24,11 +24,15 @@ def today_stuff_absences():
     absences = ''
     for i in range(len(df['name'])):
         if df['begin_new'][i] <= pd.to_datetime('today').date() <= df['end_new'][i]:
-            absences += f"{df['name'][i]} <b>{df['type of absence'][i]}</b> с {date_format_dmy(df['begin'][i])} по {date_format_dmy(df['end'][i])}\n"
+            absences += f"{df['name'][i]}\n<b>{df['type of absence'][i]}</b> с {date_format_dmy(df['begin'][i])} по {date_format_dmy(df['end'][i])}\n\n"
         else:
             continue
 
-    return absences
+    if len(absences) > 0:
+        print(absences)
+        return absences
+    else:
+        return "Сегодня все работают 🎉"
 
 
 
