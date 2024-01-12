@@ -1,14 +1,14 @@
 import asyncio
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
 from aiogram import Bot, Dispatcher
-from utils.commands import set_commands
-from handlers.menu_action import help_info, get_today_absences, weekly_absences_info, get_params_for_report, select_type, select_department, select_period, get_id, get_subscribe
-from aiogram.filters import Command
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from aiogram.filters import Command
+
+from handlers.menu_action import help_info, get_today_absences, weekly_absences_info, get_params_for_report, select_type, select_department, select_period, get_id, get_subscribe
 from state.output_by_params_state import ParamsState
 from state.subs import IdState
-
+from utils.commands import set_commands
 
 load_dotenv()
 

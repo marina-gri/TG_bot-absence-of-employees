@@ -4,7 +4,7 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 def get_df_from_xlsx():
     """Читаем файл, формируем DataFrame"""
-    df = pd.read_excel('functions/staff absence.xlsx', sheet_name=0, header=0)
+    df = pd.read_excel('/home/abs_bot/functions/staff absence.xlsx', sheet_name=0, header=0)
     return df
 
 
